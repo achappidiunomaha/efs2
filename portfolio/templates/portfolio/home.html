@@ -1,0 +1,52 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block content %}
+{% if user.is_authenticated %}
+<div class="page-container">
+    <h2 class="top-menu">Hello {{ user.username }},</h2>
+    <p>Please choose from below options.</p>
+
+</div>
+{% endif %}
+<div class="container">
+    <div class="row align-items-start">
+        <div class="col-lg-4">
+            <div class="card" style="width: 15rem;height: 31rem;">
+                <img class="card-img-top" src="{% static 'images/customer.jpg' %}" alt="Card image cap" style="width:238px;height:250px;">
+                <div class="card-body">
+                    <h5 class="card-title">Customer</h5>
+                    <p class="card-text">We see our success in our customers success, it gives us an immense pleasure
+                        when our advises turn out to be fruitful. </p>
+                    <a href="{% url 'portfolio:customer_list' %}" class="btn btn-primary">View details</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-3">
+            <div class="card" style="width: 15rem;height: 31rem;">
+                <img class="card-img-top" src="{% static 'images/nonstock.jpg' %}" alt="Card image cap" style="width:238px;height:250px;">
+                <div class="card-body">
+                    <h5 class="card-title">Non-Stock Investments</h5>
+                    <p class="card-text">Our team also provides advises for Non-Stock investments.</p>
+                    <br>
+                    <a href="{% url 'portfolio:investment_list' %}" class="btn btn-primary">View details</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-3">
+            <div class="card" style="width: 15rem;height: 31rem;">
+                <img class="card-img-top" src="{% static 'images/stocks.jpg' %}" alt="Card image cap" style="width:238px;height:250px;">
+                <div class="card-body">
+                    <h5 class="card-title">Stock Portfolio</h5>
+                    <p class="card-text">Our Stock portfolios vary across industries.</p>
+                    <br>
+                    <br>
+                    <br>
+                    <a href="{% url 'portfolio:stock_list' %}" class="btn btn-primary">View details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+{% endblock %}
